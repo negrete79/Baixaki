@@ -42,7 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 if (!data.success) {
                     alert('Ocorreu um erro ao gerar o código. Tente novamente.');
+                    console.error(data.message);
                 }
+            })
+            .catch(error => {
+                console.error('Erro na requisição:', error);
+                alert('Erro de comunicação com o servidor.');
             });
         });
     });
@@ -56,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Redireciona para o script de download, que fará a verificação
+        // Redireciona para o script de download, que fará a verificação no servidor
         downloadLink.href = 'download_arquivo.php?codigo=' + encodeURIComponent(codigoDigitado);
         linkDownloadDiv.style.display = 'block';
     });
