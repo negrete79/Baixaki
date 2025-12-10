@@ -7,7 +7,7 @@ if (isset($_GET['ativar'])) {
     $stmt = $conn->prepare("UPDATE codigos_download SET status = 'ativo' WHERE id = ?");
     $stmt->bind_param("i", $id_codigo);
     $stmt->execute();
-    header("Location: painel.php"); // Recarrega a página para ver a mudança
+    header("Location: painel.php");
     exit();
 }
 
