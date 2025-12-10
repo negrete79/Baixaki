@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Downloads Premium</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; padding: 20px; background-color: #f4f4f4; }
+        h1 { text-align: center; color: #333; }
+        .app-card { background-color: white; margin-bottom: 20px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .app-card h2 { margin-top: 0; color: #0056b3; }
+        .gerar-btn { background-color: #28a745; color: white; padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; }
+        .resultado-codigo { margin-top: 15px; padding: 10px; background-color: #e9ecef; border-radius: 5px; display: none; }
+        .resultado-codigo strong { color: #007BFF; }
+        #secao-download { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        #input-codigo { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        #verificar-btn { background-color: #007BFF; color: white; padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; }
+        #link-download { margin-top: 15px; display: none; }
+        #link-download a { color: #dc3545; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Portal de Downloads Premium</h1>
+
+    <!-- Card para o App Unitvfree -->
+    <div class="app-card">
+        <h2>Unitvfree</h2>
+        <p>Gere seu código para obter acesso ao aplicativo Unitvfree.</p>
+        <button class="gerar-btn" data-app="Unitvfree">Gerar Código para Unitvfree</button>
+        <div class="resultado-codigo">
+            <p>Seu código de acesso para <strong class="nome-app"></strong> é:</p>
+            <p class="codigo-gerado"></p>
+        </div>
+    </div>
+
+    <!-- Card para o App YouTube -->
+    <div class="app-card">
+        <h2>YouTube Premium</h2>
+        <p>Gere seu código para obter acesso ao aplicativo YouTube Mod.</p>
+        <button class="gerar-btn" data-app="YouTube">Gerar Código para YouTube</button>
+        <div class="resultado-codigo">
+            <p>Seu código de acesso para <strong class="nome-app"></strong> é:</p>
+            <p class="codigo-gerado"></p>
+        </div>
+    </div>
+
+    <!-- Card para o App X-plore -->
+    <div class="app-card">
+        <h2>X-plore</h2>
+        <p>Gere seu código para obter acesso ao aplicativo X-plore.</p>
+        <button class="gerar-btn" data-app="X-plore">Gerar Código para X-plore</button>
+        <div class="resultado-codigo">
+            <p>Seu código de acesso para <strong class="nome-app"></strong> é:</p>
+            <p class="codigo-gerado"></p>
+        </div>
+    </div>
+
+    <!-- Seção de Download (comum para todos) -->
+    <div id="secao-download">
+        <h2>Passo 2: Baixar seu App</h2>
+        <p>Já efetuou o pagamento e recebeu a confirmação? Insira seu código de acesso abaixo para baixar.</p>
+        <input type="text" id="input-codigo" placeholder="Cole seu código de acesso aqui">
+        <button id="verificar-btn">Verificar Código e Baixar</button>
+        <div id="link-download">
+            <p>✅ Código válido! Clique no link abaixo para baixar:</p>
+            <a href="#" id="download-link">Baixar Arquivo</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
