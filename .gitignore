@@ -4,5 +4,8 @@ config/db_config.php
 # Pasta com os arquivos para download
 /arquivos/
 
-# Arquivos de log
+# Arquivos de log do servidor
 *.log
+
+# Arquivos temporários
+/tmp/
