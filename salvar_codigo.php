@@ -8,13 +8,13 @@ if (isset($data->codigo) && isset($data->produto)) {
     $codigo = $data->codigo;
     $produto = $data->produto;
 
-    $stmt = $conn->prepare("INSERT INTO codigos_download (codigo, produto, status) VALUES (?, ?, 'pendente')");
-    $stmt->bind_param("ss", $codigo, $produto);
-
-    if ($stmt->execute()) {
+    try {
+        $stmt = $conn->prepare("INSERT INTO codigos_download (codigo, produto, status) VALUES (?, ?, 'pendente')");
+        $stmt->bind_param("ss", $codigo, $produto);
+        $stmt->execute();
         echo json_encode(["success" => true]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Erro ao salvar no BD."]);
+    } catch (Exception $e) {
+        echo json_encode(["success" => false, "message" => $e->getMessage()]);
     }
     $stmt->close();
 } else {
