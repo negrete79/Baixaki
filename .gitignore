@@ -1,0 +1,8 @@
+# Arquivos de configuração com senhas
+config/db_config.php
+
+# Pasta com os arquivos para download
+/arquivos/
+
+# Arquivos de log
+*.log
